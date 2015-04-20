@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.bluechatbox.android.displaysize" version="0.1.0" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <name>DisplaySize</name>
+    <description>cordova plugin to get the display size of android devices</description>
+    <license>MIT</license>
+    <keywords>cordova,android,display</keywords>
+    <repo></repo>
+    <engines>
+        <engine name="cordova" version=">=3.5.0" />
+    </engines>
+    <js-module src="www/DisplaySize.js" name="DisplaySize">
+        <clobbers target="plugin.displaySize"/>
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DisplaySize">
+                <param name="android-package" value="com.bluechatbox.android.displaysize.DisplaySize" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/DisplaySize.java" target-dir="src/com/bluechatbox/android/displaysize" />
+    </platform>
+   
+</plugin>
